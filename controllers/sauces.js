@@ -26,7 +26,7 @@ exports.createSauce = (req, res, next)=>{
         imageUrl: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`
     })
     sauces.save()
-    .then(() => res.status(200).json({message : "Sauce créée"}))
+    .then(() => res.status(201).json({message : "Sauce créée"}))
     .catch(error => res.status(400).json({ error }));
 }
 
